@@ -1,0 +1,15 @@
+#!/bin/bash
+
+if [[ -z $(which java) ]]; then
+  echo "*** Java must be installed"
+  echo "https://openjdk.org"
+  exit 1
+fi
+
+if [[ -z $(which lein) ]]; then
+  echo "*** Leiningen must be installed"
+  echo "https://leiningen.org"
+  exit 1
+fi
+
+exec lein repl :headless
